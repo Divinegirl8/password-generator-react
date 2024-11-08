@@ -43,7 +43,6 @@ const FrontPage: React.FC = () => {
          }
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
-              console.log(error.response.data.message || 'An error occurred');
               setErrorMessage(error.response.data.message || 'An error occurred')
               setPassword('')
             }}
