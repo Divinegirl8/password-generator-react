@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import style from "./index.module.css";
 import copy from "../../asset/FrontPage/img/copy.png";
 import rotate from "../../asset/FrontPage/img/rotate.png";
@@ -12,6 +12,31 @@ const FrontPage: React.FC = () => {
     const [isNumber, setIsNumber] = useState(false);
     const [isSymbol, setIsSymbol] = useState(false);
     const[errorMessage, setErrorMessage] = useState('')
+    const[copiedText, setCopiedText] = useState('');
+
+    
+    const displayRef = useRef<HTMLDivElement>(null); 
+
+    const handleCopy = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+
+        if (displayRef.current && displayRef.current.innerText !== "") {
+            const textToCopy = displayRef.current.innerText;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+               
+                setCopiedText("copied")
+                 
+                 setTimeout(() => {
+                    setCopiedText('');
+                }, 500);
+            }).catch((err) => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    };
+
+
 
     const handleCheckboxChange = (e:any) => {
         const { name, checked } = e.target;
@@ -51,24 +76,27 @@ const FrontPage: React.FC = () => {
 
   const handleGeneratePassword = () => {
     const data = { length: passwordLength };
+    const link =  "https://password-generator-java.onrender.com/api/v1/passwordGen/";
 
   
     if (isAlphabet && isNumber && isSymbol) {
-      sendData(data, "https://password-generator-java.onrender.com/api/v1/passwordGen/allCharacter");
+      sendData(data, `${link}allCharacter`);
     } else if (isAlphabet && isNumber) {
-      sendData(data, 'https://password-generator-java.onrender.com/api/v1/passwordGen/alphaNum');
+      sendData(data, `${link}alphaNum`);
     } else if (isAlphabet && isSymbol) {
-      sendData(data, 'https://password-generator-java.onrender.com/api/v1/passwordGen/alphaSymbol');
+      sendData(data, `${link}alphaSymbol`);
     } else if (isNumber && isSymbol) {
-      sendData(data, 'https://password-generator-java.onrender.com/api/v1/passwordGen/numSymbol');
+      sendData(data, `${link}numSymbol`);
     } else if (isAlphabet) {
-      sendData(data, 'https://password-generator-java.onrender.com/api/v1/passwordGen/alphabet');
+      sendData(data, `${link}alphabet`);
     } else if (isNumber) {
-      sendData(data, 'https://password-generator-java.onrender.com/api/v1/passwordGen/numbers');
+      sendData(data, `${link}numbers`);
     } else if (isSymbol) {
-      sendData(data, 'https://password-generator-java.onrender.com/api/v1/passwordGen/specialCharacters');
+      sendData(data, `${link}specialCharacters`);
     }
   };
+
+
 
       
 
@@ -128,7 +156,7 @@ const FrontPage: React.FC = () => {
 
 
                             <div className="bg-custom-blue-color w-[40rem] h-[3rem] rounded-[5px]">
-                                        {password && <p className="text-center mt-3">{password}</p>}
+                                        {password && <p className="text-center mt-3" ref={displayRef}>{password}</p>}
                                         {errorMessage && <p className="text-center mt-3 text-red-600">{errorMessage}</p>}
                             </div>
                              
@@ -139,7 +167,7 @@ const FrontPage: React.FC = () => {
                                         <img src={rotate} alt="rotate"/>
                                     </div>
 
-                                    <div className="lg:border border-solid border-custom-border-grey p-2 rounded-[8px] cursor-pointer">
+                                    <div className="lg:border border-solid border-custom-border-grey p-2 rounded-[8px] cursor-pointer"  onClick={handleCopy}>
                                     <img src={copy} alt="copy"/>
                                     </div>
 
@@ -149,7 +177,7 @@ const FrontPage: React.FC = () => {
                         </div>
                         </form>
                         <div className="flex justify-end mt-5 pr-[8rem] cursor-pointer">
-                            {/* <Link to={"/history"}>Password Generated History</Link> */}
+                            {copiedText && <p>{copiedText}</p>}
           
                         </div>
                     
@@ -160,3 +188,4 @@ const FrontPage: React.FC = () => {
 };
 
 export default FrontPage;
+
