@@ -77,7 +77,7 @@ const FrontPage: React.FC = () => {
                         </div>
                         </form>
                         <div className="flex justify-end mt-5 pr-[8rem] cursor-pointer">
-                            <Link to={"/history"}>Password Generated History</Link>
+                            {/* <Link to={"/history"}>Password Generated History</Link> */}
           
                         </div>
                     
