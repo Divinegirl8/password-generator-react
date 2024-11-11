@@ -27,17 +27,26 @@
     .inDiv{
         width: 20rem;
     }
+    .btnDiv{
+        margin-left: 4rem;
+    }
 }
 
 @media screen and (min-width: 501px) and (max-width:550px) {
     .inDiv{
         width: 23rem;
     }
+    .btnDiv{
+        margin-left: 3.5rem;
+    }
 }
 
 @media screen and (min-width: 551px) and (max-width:600px) {
     .inDiv{
         width: 25rem;
+    }
+    .btnDiv{
+        margin-left: 5rem;
     }
 }
 
@@ -63,12 +72,22 @@
     .inDiv{
         width: 30rem;
     }
+    .btnDiv{
+        margin-left: 5rem;
+    }
 
 }
 
 @media screen and (min-width: 1051px) and (max-width:1190px) {
     .inDiv{
         width: 36rem;
+    }
+
+}
+
+@media screen and (min-width: 1191px) and (max-width:2500px) {
+    .inDiv{
+        width: 3rem;
     }
 
 }

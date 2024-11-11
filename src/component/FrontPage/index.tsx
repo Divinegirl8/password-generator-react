@@ -111,7 +111,7 @@ const FrontPage: React.FC = () => {
             <div className="font-custom-font">
                 <div
                     data-testid="main-container"
-                    className={`mx-auto my-[2rem] h-[30rem] lg:my-[5rem] w-[90%] md:w-[70%] lg:w-[70%] lg:h-[40rem] rounded-[2rem] bg-white flex flex-col ${style.mainCont}}`}
+                    className={`mx-auto my-[2rem] sm:my-[5rem] md:my-[5rem] h-[30rem] lg:my-[5rem] w-[90%] md:w-[70%] lg:w-[70%] lg:h-[40rem] rounded-[2rem] bg-white flex flex-col ${style.mainCont}}`}
                 >
                     <p className="uppercase text-center pt-4 lg:text-[3.5rem] md:text-[2rem] sm:text-[1.5rem] text-[1.2rem]  font-black font-custom-font">
                         Password Gen 🔑
@@ -166,7 +166,7 @@ const FrontPage: React.FC = () => {
 
                              
 
-                             <div className="flex flex-row gap-5 mt-3 lg:mt-0 lg:ml-0 ml-8 btn-div">
+                             <div className={`flex flex-row gap-5 mt-3 lg:mt-0 lg:ml-0 ml-8 ${style.btnDiv}`}>
 
                                     <div className="border border-solid border-custom-border-grey p-2 rounded-[8px] cursor-pointer" onClick={handleGeneratePassword}>
                                         <img src={rotate} alt="rotate" className="w-4 lg:w-7"/>
