@@ -160,7 +160,7 @@ const FrontPage: React.FC = () => {
 
                                   <div className={`bg-custom-blue-color lg:w-[40rem] h-[3rem] rounded-[5px]  mx-auto lg:mx-0 ${style.inDiv}`}>
                                       {password && <p className={`text-center lg:mt-3 lg:pt-0 ${style.breakWord}`} ref={displayRef}>{password}</p>}
-                                      {errorMessage && <p className="text-center mt-3 lg:pt-0  text-red-600">{errorMessage}</p>}
+                                      {errorMessage && <p className="text-center mt-3 lg:pt-0 pt-2 text-red-600">{errorMessage}</p>}
                                   </div>
                       
 
