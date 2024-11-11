@@ -12,8 +12,11 @@
 
 @media (max-width: 390px) {
     .breakWord {
-      padding: 2px;
-      word-wrap: break-word;
+        padding: 2px;
+        overflow-wrap: break-word;
+    }
+    .inDiv{
+        width: 16rem;
     }
   }
 

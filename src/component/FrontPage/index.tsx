@@ -103,11 +103,15 @@ const FrontPage: React.FC = () => {
 
 
     return (
+      <>
+      <style>
+          
+      </style>
         <div>
             <div className="font-custom-font">
                 <div
                     data-testid="main-container"
-                    className={`mx-auto my-[6.8rem] h-[30rem] lg:my-[5rem] w-[90%] md:w-[70%] lg:w-[70%] lg:h-[40rem] rounded-[2rem] bg-white flex flex-col ${style.mainCont}}`}
+                    className={`mx-auto  h-[30rem] lg:my-[5rem] w-[90%] md:w-[70%] lg:w-[70%] lg:h-[40rem] rounded-[2rem] bg-white flex flex-col ${style.mainCont}}`}
                 >
                     <p className="uppercase text-center pt-4 lg:text-[3.5rem] md:text-[2rem] sm:text-[1.5rem] text-[1.2rem]  font-black font-custom-font">
                         Password Gen 🔑
@@ -123,23 +127,23 @@ const FrontPage: React.FC = () => {
 
                    
                         <form action="" className="space-y-3  lg:space-y-8" onSubmit={(e) => e.preventDefault()}>
-                        <div className={`flex flex-row w-[16rem] border border-solid border-custom-border-grey justify-between p-3 lg:w-[48rem] rounded-[7px] mx-auto mt-8 ${style.inDiv}`}>
+                        <div className={`flex flex-row  border border-solid border-custom-border-grey justify-between p-3 lg:w-[48rem] rounded-[7px] mx-auto mt-8 ${style.inDiv}`}>
                         <p className="font-semibold font-custom-font lg:text-[20px]" >Alphabets (A-Za-z)</p>
                         <input type="checkbox" name="alphabet" checked={isAlphabet} onChange={handleCheckboxChange} id="" className="lg:w-[20px] lg:h-[20px] rounded-[5px] cursor-pointer" />
                         </div>
 
-                        <div className={`flex flex-row w-[16rem] border border-solid border-custom-border-grey justify-between p-3 lg:w-[48rem] rounded-[7px] mx-auto lg:mt-8 ${style.inDiv}`}>
+                        <div className={`flex flex-row border border-solid border-custom-border-grey justify-between p-3 lg:w-[48rem] rounded-[7px] mx-auto lg:mt-8 ${style.inDiv}`}>
                         <p className="font-semibold font-custom-font lg:text-[20px]" >Numbers (0-9)</p>
                         <input type="checkbox" name="number" checked={isNumber} onChange={handleCheckboxChange} id="" className="lg:w-[20px] lg:h-[20px] rounded-[5px] cursor-pointer" />
                         </div>
 
 
-                        <div className={`flex flex-row w-[16rem] border  border-solid border-custom-border-grey justify-between p-3 lg:w-[48rem] rounded-[7px] mx-auto lg:mt-8 ${style.inDiv}`}>
+                        <div className={`flex flex-row  border  border-solid border-custom-border-grey justify-between p-3 lg:w-[48rem] rounded-[7px] mx-auto lg:mt-8 ${style.inDiv}`}>
                         <p className="font-semibold font-custom-font lg:text-[20px]" >Symbols (&@#$%)</p>
                         <input type="checkbox" name="symbol" checked={isSymbol} onChange={handleCheckboxChange} id="" className="lg:w-[20px] lg:h-[20px] rounded-[5px] cursor-pointer" />
                         </div>
  
-                        <div className={`border w-[16rem] border-solid border-custom-border-grey lg:w-[48rem] rounded-[7px] mx-auto lg:mt-8 lg:text-[20px] ${style.inDiv}`}>
+                        <div className={`border border-solid border-custom-border-grey lg:w-[48rem] rounded-[7px] mx-auto lg:mt-8 lg:text-[20px] ${style.inDiv}`}>
                         <input 
                             type="text"  
                             name="passwordLength" 
@@ -154,7 +158,7 @@ const FrontPage: React.FC = () => {
 
                         <div className="lg:flex lg:flex-row lg:justify-between lg:mt-8  lg:px-[121px] lg:gap-5">
 
-                                  <div className={`bg-custom-blue-color lg:w-[40rem] h-[3rem] rounded-[5px] w-[16rem] mx-auto lg:mx-0 ${style.inDiv}`}>
+                                  <div className={`bg-custom-blue-color lg:w-[40rem] h-[3rem] rounded-[5px]  mx-auto lg:mx-0 ${style.inDiv}`}>
                                       {password && <p className={`text-center lg:mt-3 lg:pt-0 pt-2 ${style.breakWord}`} ref={displayRef}>{password}</p>}
                                       {errorMessage && <p className="text-center mt-3 lg:pt-0 pt-2 text-red-600">{errorMessage}</p>}
                                   </div>
@@ -184,7 +188,7 @@ const FrontPage: React.FC = () => {
                     
                 </div>
             </div>
-        </div>
+        </div></>
     );
 };
 
