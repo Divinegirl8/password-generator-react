@@ -111,7 +111,7 @@ const FrontPage: React.FC = () => {
             <div className="font-custom-font">
                 <div
                     data-testid="main-container"
-                    className={`mx-auto  h-[30rem] lg:my-[5rem] w-[90%] md:w-[70%] lg:w-[70%] lg:h-[40rem] rounded-[2rem] bg-white flex flex-col ${style.mainCont}}`}
+                    className={`mx-auto my-[2rem] h-[30rem] lg:my-[5rem] w-[90%] md:w-[70%] lg:w-[70%] lg:h-[40rem] rounded-[2rem] bg-white flex flex-col ${style.mainCont}}`}
                 >
                     <p className="uppercase text-center pt-4 lg:text-[3.5rem] md:text-[2rem] sm:text-[1.5rem] text-[1.2rem]  font-black font-custom-font">
                         Password Gen 🔑
